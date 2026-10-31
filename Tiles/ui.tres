@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://srmokvdtp2r3"]
+[gd_resource type="TileSet" format=3 uid="uid://srmokvdtp2r3"]
 
 [ext_resource type="Texture2D" uid="uid://cdh6xhdg43d1a" path="res://StartMenu.png" id="1_3nh7n"]
 

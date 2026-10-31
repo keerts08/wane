@@ -34,7 +34,7 @@ window/size/mode=2
 window/size/resizable=false
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
-mouse_cursor/custom_image="uid://c80oika2280gx"
+mouse_cursor/custom_image="uid://7ikxh2wobrd4"
 
 [editor_plugins]
 
@@ -80,4 +80,5 @@ locale/translations_pot_files=PackedStringArray("res://Dialogues/Storyline.dialo
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 textures/default_filters/use_nearest_mipmap_filter=true

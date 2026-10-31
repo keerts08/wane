@@ -1,14 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://bce2w2ed0s7hq"]
+[gd_scene format=3 uid="uid://bce2w2ed0s7hq"]
 
 [ext_resource type="Script" uid="uid://cjlmdrpg363p0" path="res://Scripts/player_1.gd" id="1_n5fpy"]
 [ext_resource type="PackedScene" uid="uid://bnxjlc4wjt34y" path="res://Scenes/bullet_player.tscn" id="2_dvont"]
-[ext_resource type="Texture2D" uid="uid://dkbg7mq2f2p28" path="res://top-down/Spritesheet/spritesheet_characters.png" id="3_dvont"]
+[ext_resource type="Texture2D" uid="uid://crhyujjpslntd" path="res://Tiles/tilemap.png" id="3_i047d"]
 [ext_resource type="PackedScene" uid="uid://c7mlgwepagcrh" path="res://Scenes/lives.tscn" id="4_1yta1"]
+[ext_resource type="Texture2D" uid="uid://db7t2y0l8udvo" path="res://top-down/Vector/vector_characters.svg" id="4_hjvw7"]
 [ext_resource type="AudioStream" uid="uid://52st8muppevs" path="res://sounds/Shoot.wav" id="5_2ale3"]
 [ext_resource type="PackedScene" uid="uid://d176k6appmcl5" path="res://Scenes/coinsHUD.tscn" id="5_i047d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dvont"]
-height = 38.6667
+radius = 14.0
+height = 38.0
 
 [sub_resource type="Animation" id="Animation_1yta1"]
 length = 0.001
@@ -46,21 +48,30 @@ _data = {
 &"death": SubResource("Animation_dvont")
 }
 
-[node name="Player" type="CharacterBody2D" groups=["Player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1177899714 groups=["Player"]]
 script = ExtResource("1_n5fpy")
 BULLET = ExtResource("2_dvont")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=336176586]
 texture_filter = 1
-texture = ExtResource("3_dvont")
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("3_i047d")
 region_enabled = true
-region_rect = Rect2(60, 0, 53, 44)
+region_rect = Rect2(16.640688, 119.96915, 16.45312, 15.333496)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-12, 0)
+[node name="Gun" type="Sprite2D" parent="Sprite2D" unique_id=441813778]
+texture_filter = 1
+position = Vector2(1.7391305, 3.478261)
+rotation = -0.08726645
+scale = Vector2(0.47, 0.41)
+texture = ExtResource("4_hjvw7")
+region_enabled = true
+region_rect = Rect2(11.0292015, 591.8944, 34.72418, 12.210022)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=710827928]
 shape = SubResource("CapsuleShape2D_dvont")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=437955428]
 zoom = Vector2(0.7, 0.7)
 limit_left = 0
 limit_top = 0
@@ -69,18 +80,16 @@ limit_bottom = 1340
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_2ale3")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=731323586]
+libraries/ = SubResource("AnimationLibrary_2ale3")
 
-[node name="Health" type="CanvasLayer" parent="."]
+[node name="Health" type="CanvasLayer" parent="." unique_id=1162550389]
 
-[node name="Lives" parent="Health" instance=ExtResource("4_1yta1")]
+[node name="Lives" parent="Health" unique_id=2103930420 instance=ExtResource("4_1yta1")]
 
-[node name="Coins" parent="Health" instance=ExtResource("5_i047d")]
+[node name="Coins" parent="Health" unique_id=1663931185 instance=ExtResource("5_i047d")]
 
-[node name="Shoot" type="AudioStreamPlayer2D" parent="."]
+[node name="Shoot" type="AudioStreamPlayer2D" parent="." unique_id=806308427]
 stream = ExtResource("5_2ale3")
 
 [connection signal="player_death" from="." to="." method="_on_player_death"]

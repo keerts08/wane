@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7sy3skbxyx8o"]
+[gd_scene format=3 uid="uid://c7sy3skbxyx8o"]
 
 [ext_resource type="Texture2D" uid="uid://ptv03m4fingn" path="res://top-down/PNG/weapon_machine.png" id="1_mqx58"]
 [ext_resource type="Script" uid="uid://cc8rg25kjdsi7" path="res://Scripts/bullet_enemy.gd" id="2_cg55a"]
@@ -6,15 +6,15 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mqx58"]
 radius = 5.0
 
-[node name="Area2D" type="Area2D"]
+[node name="Area2D" type="Area2D" unique_id=1171947169]
 script = ExtResource("2_cg55a")
 
-[node name="BulletEnemy" type="Sprite2D" parent="."]
+[node name="BulletEnemy" type="Sprite2D" parent="." unique_id=1950480204]
 modulate = Color(1, 0.21485, 0.274677, 1)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_mqx58")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2087514557]
 rotation = 1.5708
 scale = Vector2(0.4, 0.4)
 shape = SubResource("CapsuleShape2D_mqx58")

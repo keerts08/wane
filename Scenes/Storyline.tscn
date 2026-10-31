@@ -1,19 +1,38 @@
-[gd_scene load_steps=7 format=3 uid="uid://6kch2xb15k8b"]
+[gd_scene format=3 uid="uid://6kch2xb15k8b"]
 
 [ext_resource type="Script" uid="uid://5f8w8lu3jpul" path="res://Scripts/options.gd" id="1_hgvw1"]
-[ext_resource type="Texture2D" uid="uid://beuywvhwbbarl" path="res://top-down/Sample.png" id="2_7mt03"]
-[ext_resource type="FontFile" uid="uid://bp54llop4vyos" path="res://font/Fonts/Kenney Blocks.ttf" id="3_3rl6e"]
-[ext_resource type="Texture2D" uid="uid://cdh6xhdg43d1a" path="res://StartMenu.png" id="4_7mt03"]
+[ext_resource type="Texture2D" uid="uid://cukfome5lfqdq" path="res://dungeon/Sample.png" id="2_ey7fi"]
+[ext_resource type="FontFile" uid="uid://bo8vq4n1olmk4" path="res://font/Fonts/Kenney High.ttf" id="3_p1inf"]
+[ext_resource type="Texture2D" uid="uid://doxdl3x0veyim" path="res://ui-pack/PNG/Double/Border/panel-border-000.png" id="6_8dhyn"]
+[ext_resource type="Texture2D" uid="uid://dw7plcbrb41np" path="res://ui-pack/PNG/Double/Transparent border/panel-transparent-border-000.png" id="7_o6uoy"]
+[ext_resource type="Texture2D" uid="uid://cv68y1niforle" path="res://ui-pack/PNG/Double/Panel/panel-000.png" id="8_f0qpk"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3rl6e"]
-atlas = ExtResource("4_7mt03")
-region = Rect2(1426, 463, 586, 194)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xnmlc"]
+texture = ExtResource("6_8dhyn")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gfq20"]
-atlas = ExtResource("4_7mt03")
-region = Rect2(1426, 713, 587, 193)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e7ied"]
+texture = ExtResource("7_o6uoy")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
 
-[node name="Storyline" type="Control"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3ldyg"]
+texture = ExtResource("8_f0qpk")
+texture_margin_left = 25.0
+texture_margin_top = 25.0
+texture_margin_right = 25.0
+texture_margin_bottom = 25.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="Storyline" type="Control" unique_id=565269602]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,52 +41,43 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hgvw1")
 
-[node name="Sample" type="Sprite2D" parent="."]
-modulate = Color(0.321728, 0.321728, 0.321728, 1)
-position = Vector2(535.00006, 379)
-scale = Vector2(2.3289158, 2.3289158)
-texture = ExtResource("2_7mt03")
+[node name="BG" type="Sprite2D" parent="." unique_id=1671147376]
+modulate = Color(0.20942885, 0.20942888, 0.20942879, 1)
+position = Vector2(232.99991, 307.99997)
+scale = Vector2(2.0156624, 2.0156624)
+texture = ExtResource("2_ey7fi")
 region_enabled = true
 region_rect = Rect2(0, 0, 918, 415.58)
 
-[node name="Heading" type="Label" parent="."]
+[node name="Heading2" type="Label" parent="." unique_id=1636709194]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -375.0
-offset_top = 77.0
-offset_right = 375.0
-offset_bottom = 257.0
+offset_left = -469.0
+offset_top = 110.0
+offset_right = 469.0
+offset_bottom = 336.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("3_3rl6e")
-theme_override_font_sizes/font_size = 105
-text = "Story"
+theme_override_fonts/font = ExtResource("3_p1inf")
+theme_override_font_sizes/font_size = 170
+text = "STORY"
 horizontal_alignment = 1
 
-[node name="Back" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -89.0
-offset_top = 22.0
-offset_right = 497.0
-offset_bottom = 216.0
-grow_horizontal = 2
-scale = Vector2(0.3, 0.3)
-texture_normal = SubResource("AtlasTexture_3rl6e")
-texture_hover = SubResource("AtlasTexture_gfq20")
-metadata/_edit_group_ = true
-
-[node name="Label" type="Label" parent="Back"]
+[node name="Back" type="Button" parent="." unique_id=2051716577]
 layout_mode = 0
-offset_right = 590.0
-offset_bottom = 181.0
-theme_override_fonts/font = ExtResource("3_3rl6e")
-theme_override_font_sizes/font_size = 80
-text = "Back"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_left = 83.0
+offset_top = 55.0
+offset_right = 409.0
+offset_bottom = 208.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_p1inf")
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxTexture_xnmlc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_e7ied")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3ldyg")
+text = "<- BACK"
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
