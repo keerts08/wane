@@ -1,9 +1,6 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://c3sop28fj5amp"]
-
-[ext_resource type="Texture2D" uid="uid://dcb64xn671tru" path="res://scfi/Tilesheet/scifi_tilesheet.png" id="1_kwf18"]
+[gd_resource type="TileSet" format=3 uid="uid://c3sop28fj5amp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cg6lr"]
-texture = ExtResource("1_kwf18")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 1:0/0 = 0
@@ -139,9 +136,6 @@ texture_region_size = Vector2i(64, 64)
 9:4/0 = 0
 10:4/0 = 0
 11:4/0 = 0
-0:1/animation_columns = 2
-0:1/animation_frame_0/duration = 0.5
-0:1/animation_frame_1/duration = 0.5
 0:1/0 = 0
 
 [resource]

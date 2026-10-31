@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bxn3vyv8dv6kq"]
+[gd_resource type="TileSet" format=3 uid="uid://bxn3vyv8dv6kq"]
 
 [ext_resource type="Texture2D" uid="uid://n4mn4cemmeqj" path="res://medieval/Tilesheet/medieval_tilesheet.png" id="1_4e462"]
 

@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://44wb56ghurrd"]
+[gd_scene format=3 uid="uid://44wb56ghurrd"]
 
-[ext_resource type="Texture2D" uid="uid://beuywvhwbbarl" path="res://top-down/Sample.png" id="1_8um5k"]
-[ext_resource type="FontFile" uid="uid://bp54llop4vyos" path="res://font/Fonts/Kenney Blocks.ttf" id="2_8saeu"]
+[ext_resource type="Texture2D" uid="uid://cukfome5lfqdq" path="res://dungeon/Sample.png" id="1_ghw46"]
+[ext_resource type="FontFile" uid="uid://bo8vq4n1olmk4" path="res://font/Fonts/Kenney High.ttf" id="2_df05h"]
 [ext_resource type="Texture2D" uid="uid://cdh6xhdg43d1a" path="res://StartMenu.png" id="3_8saeu"]
 
 [sub_resource type="GDScript" id="GDScript_df05h"]
@@ -30,7 +30,7 @@ region = Rect2(1426, 463, 586, 194)
 atlas = ExtResource("3_8saeu")
 region = Rect2(1426, 713, 587, 193)
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=138981412]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,15 +39,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_df05h")
 
-[node name="BG" type="Sprite2D" parent="."]
+[node name="BG" type="Sprite2D" parent="." unique_id=573859623]
 modulate = Color(0.355314, 0.355314, 0.355314, 1)
 position = Vector2(550, 401.75)
 scale = Vector2(2.0156624, 2.0156624)
-texture = ExtResource("1_8um5k")
+texture = ExtResource("1_ghw46")
 region_enabled = true
 region_rect = Rect2(0, 0, 918, 415.58)
 
-[node name="Heading" type="Label" parent="."]
+[node name="Heading" type="Label" parent="." unique_id=529500918]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -57,12 +57,12 @@ offset_top = 91.0
 offset_right = 469.0
 offset_bottom = 317.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_8saeu")
-theme_override_font_sizes/font_size = 150
-text = "Hecatomb"
+theme_override_fonts/font = ExtResource("2_df05h")
+theme_override_font_sizes/font_size = 210
+text = "WANE"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1335502468]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -70,9 +70,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -558.0
-offset_top = 4.0
+offset_top = 9.0
 offset_right = 1300.0
-offset_bottom = 198.0
+offset_bottom = 203.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.6, 0.6)
@@ -80,48 +80,48 @@ theme_override_constants/separation = 50
 alignment = 1
 metadata/_edit_group_ = true
 
-[node name="Start" type="TextureButton" parent="HBoxContainer"]
+[node name="Start" type="TextureButton" parent="HBoxContainer" unique_id=1339698720]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_8saeu")
 texture_hover = SubResource("AtlasTexture_ghw46")
 
-[node name="Label" type="Label" parent="HBoxContainer/Start"]
+[node name="Label" type="Label" parent="HBoxContainer/Start" unique_id=179725801]
 layout_mode = 0
 offset_right = 590.0
 offset_bottom = 181.0
-theme_override_fonts/font = ExtResource("2_8saeu")
-theme_override_font_sizes/font_size = 80
+theme_override_fonts/font = ExtResource("2_df05h")
+theme_override_font_sizes/font_size = 120
 text = "Start"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Story" type="TextureButton" parent="HBoxContainer"]
+[node name="Story" type="TextureButton" parent="HBoxContainer" unique_id=955316931]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_8saeu")
 texture_hover = SubResource("AtlasTexture_ghw46")
 
-[node name="Story" type="Label" parent="HBoxContainer/Story"]
+[node name="Story" type="Label" parent="HBoxContainer/Story" unique_id=1301759251]
 layout_mode = 0
 offset_left = 10.0
 offset_right = 603.0
 offset_bottom = 189.0
-theme_override_fonts/font = ExtResource("2_8saeu")
-theme_override_font_sizes/font_size = 80
+theme_override_fonts/font = ExtResource("2_df05h")
+theme_override_font_sizes/font_size = 120
 text = "Story"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Exit" type="TextureButton" parent="HBoxContainer"]
+[node name="Exit" type="TextureButton" parent="HBoxContainer" unique_id=737076362]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_8saeu")
 texture_hover = SubResource("AtlasTexture_ghw46")
 
-[node name="Label" type="Label" parent="HBoxContainer/Exit"]
+[node name="Label" type="Label" parent="HBoxContainer/Exit" unique_id=2122090964]
 layout_mode = 0
 offset_right = 590.0
 offset_bottom = 181.0
-theme_override_fonts/font = ExtResource("2_8saeu")
-theme_override_font_sizes/font_size = 80
+theme_override_fonts/font = ExtResource("2_df05h")
+theme_override_font_sizes/font_size = 120
 text = "Exit"
 horizontal_alignment = 1
 vertical_alignment = 1
