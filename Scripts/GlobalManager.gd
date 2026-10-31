@@ -47,7 +47,7 @@ func change_level_after_delay() -> void:
 	get_tree().paused = false
 	if leveltochange:
 		emit_signal("player_won")
-		DialogueManager.show_example_dialogue_balloon(sacrificedialogue, "start")
+		DialogueManager.show_dialogue_balloon(sacrificedialogue, "start")
 
 func sac_knowledge():
 	emit_signal("lose_knowledge")
