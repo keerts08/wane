@@ -1,0 +1,119 @@
+[gd_scene load_steps=7 format=3 uid="uid://emlbi7yabj70"]
+
+[ext_resource type="Texture2D" uid="uid://beuywvhwbbarl" path="res://top-down/Sample.png" id="1_uthr7"]
+[ext_resource type="FontFile" uid="uid://bp54llop4vyos" path="res://font/Fonts/Kenney Blocks.ttf" id="2_66h5f"]
+[ext_resource type="Texture2D" uid="uid://cdh6xhdg43d1a" path="res://StartMenu.png" id="3_wpycq"]
+
+[sub_resource type="GDScript" id="GDScript_df05h"]
+script/source = "extends Control
+
+
+func _on_restart_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Scenes/Level 1.tscn\")
+	GlobalManager.player_health = 5
+	GlobalManager.bullet_player_speed = 500
+	GlobalManager.player_speed = 400
+	GlobalManager.knowledge_sacrificed = false
+
+func _on_exit_pressed() -> void:
+	get_tree().quit()
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktc4i"]
+atlas = ExtResource("3_wpycq")
+region = Rect2(1426, 463, 586, 194)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uib17"]
+atlas = ExtResource("3_wpycq")
+region = Rect2(1426, 713, 587, 193)
+
+[node name="Win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_df05h")
+
+[node name="BG" type="Sprite2D" parent="."]
+modulate = Color(0.00351917, 0.00351917, 0.00351916, 1)
+position = Vector2(580, 591.1)
+scale = Vector2(2.44786, 2.97301)
+texture = ExtResource("1_uthr7")
+region_enabled = true
+region_rect = Rect2(0, 0, 918, 415.58)
+
+[node name="Heading" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -482.5
+offset_top = -234.0
+offset_right = 482.5
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.774303, 0.119851, 0.369039, 1)
+theme_override_fonts/font = ExtResource("2_66h5f")
+theme_override_font_sizes/font_size = 120
+text = "You Win!"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -407.0
+offset_top = 434.0
+offset_right = 785.0
+offset_bottom = 628.0
+grow_horizontal = 2
+scale = Vector2(0.7, 0.7)
+theme_override_constants/separation = 20
+metadata/_edit_group_ = true
+
+[node name="Restart" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_ktc4i")
+texture_hover = SubResource("AtlasTexture_uib17")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="HBoxContainer/Restart"]
+layout_mode = 0
+offset_left = -63.0
+offset_top = -20.0
+offset_right = 646.0
+offset_bottom = 196.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_66h5f")
+theme_override_font_sizes/font_size = 70
+text = "Restart"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_ktc4i")
+texture_hover = SubResource("AtlasTexture_uib17")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="HBoxContainer/Exit"]
+layout_mode = 0
+offset_left = -63.0
+offset_top = -20.0
+offset_right = 646.0
+offset_bottom = 196.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_66h5f")
+theme_override_font_sizes/font_size = 70
+text = "Exit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="HBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="HBoxContainer/Exit" to="." method="_on_exit_pressed"]

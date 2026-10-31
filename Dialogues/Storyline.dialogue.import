@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bbt8buhcm65nb"
+path="res://.godot/imported/Storyline.dialogue-79937b54f2ab8b8b6912e98d0c3c8017.tres"
+
+[deps]
+
+source_file="res://Dialogues/Storyline.dialogue"
+dest_files=["res://.godot/imported/Storyline.dialogue-79937b54f2ab8b8b6912e98d0c3c8017.tres"]
+
+[params]
+
+defaults=true

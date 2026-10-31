@@ -1,0 +1,5 @@
+
+~ start
+Heca: This ain't easy. Remember that. Continue...
+do _finished()
+=> END	

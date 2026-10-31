@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnxjlc4wjt34y"]
+
+[ext_resource type="Script" uid="uid://bp0gcu86rdsh1" path="res://Scripts/bullet_player.gd" id="1_4qi73"]
+[ext_resource type="Texture2D" uid="uid://ptv03m4fingn" path="res://top-down/PNG/weapon_machine.png" id="1_s5lyr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mqx58"]
+radius = 6.0
+height = 36.0
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_4qi73")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.4, 0.4)
+shape = SubResource("CapsuleShape2D_mqx58")
+
+[node name="BulletPlayer" type="Sprite2D" parent="."]
+modulate = Color(3.85046e-06, 0.849723, 0.968932, 1)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_s5lyr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

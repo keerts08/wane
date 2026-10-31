@@ -1,0 +1,6 @@
+
+~ start
+Heca: Great! you found my new coins. Continue...
+Heca: Keep going you're doing well. Exit...
+do _finished()
+=> END	

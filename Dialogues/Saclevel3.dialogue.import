@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bta5j8xrjlvvg"
+path="res://.godot/imported/Saclevel3.dialogue-8610be9f1197ff238806cfdb291ea390.tres"
+
+[deps]
+
+source_file="res://Dialogues/Saclevel3.dialogue"
+dest_files=["res://.godot/imported/Saclevel3.dialogue-8610be9f1197ff238806cfdb291ea390.tres"]
+
+[params]
+
+defaults=true

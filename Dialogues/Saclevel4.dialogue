@@ -1,0 +1,13 @@
+
+~ start
+
+Unknown: You need to give up something in order to pass to the next level. What do you want to sacrifice?
+- Shooting speed
+	do sac_shoot_speed()
+	Now, some of your bullet speed is lost. Click anywhere to exit...
+	do _finished()
+- Knowledge
+	do sac_knowledge()
+	Now, all your knowledge is lost. Click anywhere to exit...
+	do _finished()
+=> END	

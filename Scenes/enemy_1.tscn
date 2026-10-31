@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://6e1u5wcqnjij"]
+
+[ext_resource type="Script" uid="uid://dps2bb7rb1ost" path="res://Scripts/enemy_1.gd" id="1_0a874"]
+[ext_resource type="Texture2D" uid="uid://dkbg7mq2f2p28" path="res://top-down/Spritesheet/spritesheet_characters.png" id="2_0a874"]
+[ext_resource type="PackedScene" uid="uid://c7sy3skbxyx8o" path="res://Scenes/bullet_enemy.tscn" id="2_lssre"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lssre"]
+radius = 10.3333
+height = 40.0
+
+[sub_resource type="Animation" id="Animation_lssre"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0a874"]
+resource_name = "death"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.794399, 3.22476e-06, 9.62615e-07, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wlnc2"]
+_data = {
+&"RESET": SubResource("Animation_lssre"),
+&"death": SubResource("Animation_0a874")
+}
+
+[node name="Enemy1" type="CharacterBody2D" groups=["Enemy"]]
+script = ExtResource("1_0a874")
+ENEMYBULLET = ExtResource("2_lssre")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_0a874")
+region_enabled = true
+region_rect = Rect2(425, 44, 33, 44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 0)
+shape = SubResource("CapsuleShape2D_lssre")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wlnc2")
+}

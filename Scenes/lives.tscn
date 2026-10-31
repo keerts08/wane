@@ -1,0 +1,152 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7mlgwepagcrh"]
+
+[ext_resource type="Texture2D" uid="uid://dospb8kv67msd" path="res://heart.png" id="1_0axo5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0axo5"]
+bg_color = Color(0.2, 1, 0.698039, 1)
+corner_radius_top_left = 70
+corner_radius_top_right = 70
+corner_radius_bottom_right = 70
+corner_radius_bottom_left = 70
+shadow_color = Color(0, 0, 0, 0.733333)
+shadow_size = 5
+shadow_offset = Vector2(10, 10)
+
+[node name="Lives" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(0.5, 0.5)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 76.0
+offset_right = 518.0
+offset_bottom = 194.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0axo5")
+
+[node name="empty" type="HBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 60.0
+offset_right = 25096.0
+offset_bottom = 2060.0
+metadata/_edit_group_ = true
+
+[node name="EmptyHeart" type="TextureRect" parent="Panel/empty"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/empty/EmptyHeart"]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_0axo5")
+region_enabled = true
+region_rect = Rect2(10374, 0, 2142, 2000)
+
+[node name="EmptyHeart2" type="TextureRect" parent="Panel/empty"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/empty/EmptyHeart2"]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_0axo5")
+region_enabled = true
+region_rect = Rect2(10374, 0, 2142, 2000)
+
+[node name="EmptyHeart3" type="TextureRect" parent="Panel/empty"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/empty/EmptyHeart3"]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_0axo5")
+region_enabled = true
+region_rect = Rect2(10374, 0, 2142, 2000)
+
+[node name="EmptyHeart4" type="TextureRect" parent="Panel/empty"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/empty/EmptyHeart4"]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_0axo5")
+region_enabled = true
+region_rect = Rect2(10374, 0, 2142, 2000)
+
+[node name="EmptyHeart5" type="TextureRect" parent="Panel/empty"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/empty/EmptyHeart5"]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_0axo5")
+region_enabled = true
+region_rect = Rect2(10374, 0, 2142, 2000)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 60.0
+offset_right = 25096.0
+offset_bottom = 2060.0
+metadata/_edit_group_ = true
+
+[node name="Heart" type="TextureRect" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/HBoxContainer/Heart"]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_0axo5")
+region_enabled = true
+region_rect = Rect2(0, 0, 2142, 2000)
+
+[node name="Heart2" type="TextureRect" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/HBoxContainer/Heart2"]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_0axo5")
+region_enabled = true
+region_rect = Rect2(0, 0, 2142, 2000)
+
+[node name="Heart3" type="TextureRect" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/HBoxContainer/Heart3"]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_0axo5")
+region_enabled = true
+region_rect = Rect2(0, 0, 2142, 2000)
+
+[node name="Heart4" type="TextureRect" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/HBoxContainer/Heart4"]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_0axo5")
+region_enabled = true
+region_rect = Rect2(0, 0, 2142, 2000)
+
+[node name="Heart5" type="TextureRect" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/HBoxContainer/Heart5"]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_0axo5")
+region_enabled = true
+region_rect = Rect2(0, 0, 2142, 2000)

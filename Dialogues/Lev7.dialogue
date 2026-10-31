@@ -1,0 +1,5 @@
+
+~ start
+Heca: You have nothing left to scarifice. Your ultimate sacrifice is nearing. Continue...
+do _finished()
+=> END	

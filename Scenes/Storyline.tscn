@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://6kch2xb15k8b"]
+
+[ext_resource type="Script" uid="uid://5f8w8lu3jpul" path="res://Scripts/options.gd" id="1_hgvw1"]
+[ext_resource type="Texture2D" uid="uid://beuywvhwbbarl" path="res://top-down/Sample.png" id="2_7mt03"]
+[ext_resource type="FontFile" uid="uid://bp54llop4vyos" path="res://font/Fonts/Kenney Blocks.ttf" id="3_3rl6e"]
+[ext_resource type="Texture2D" uid="uid://cdh6xhdg43d1a" path="res://StartMenu.png" id="4_7mt03"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rl6e"]
+atlas = ExtResource("4_7mt03")
+region = Rect2(1426, 463, 586, 194)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfq20"]
+atlas = ExtResource("4_7mt03")
+region = Rect2(1426, 713, 587, 193)
+
+[node name="Storyline" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hgvw1")
+
+[node name="Sample" type="Sprite2D" parent="."]
+modulate = Color(0.321728, 0.321728, 0.321728, 1)
+position = Vector2(535.00006, 379)
+scale = Vector2(2.3289158, 2.3289158)
+texture = ExtResource("2_7mt03")
+region_enabled = true
+region_rect = Rect2(0, 0, 918, 415.58)
+
+[node name="Heading" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -375.0
+offset_top = 77.0
+offset_right = 375.0
+offset_bottom = 257.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_3rl6e")
+theme_override_font_sizes/font_size = 105
+text = "Story"
+horizontal_alignment = 1
+
+[node name="Back" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -89.0
+offset_top = 22.0
+offset_right = 497.0
+offset_bottom = 216.0
+grow_horizontal = 2
+scale = Vector2(0.3, 0.3)
+texture_normal = SubResource("AtlasTexture_3rl6e")
+texture_hover = SubResource("AtlasTexture_gfq20")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Back"]
+layout_mode = 0
+offset_right = 590.0
+offset_bottom = 181.0
+theme_override_fonts/font = ExtResource("3_3rl6e")
+theme_override_font_sizes/font_size = 80
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
