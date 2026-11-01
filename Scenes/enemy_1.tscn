@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://6e1u5wcqnjij"]
+[gd_scene format=3 uid="uid://6e1u5wcqnjij"]
 
 [ext_resource type="Script" uid="uid://dps2bb7rb1ost" path="res://Scripts/enemy_1.gd" id="1_0a874"]
-[ext_resource type="Texture2D" uid="uid://dkbg7mq2f2p28" path="res://top-down/Spritesheet/spritesheet_characters.png" id="2_0a874"]
 [ext_resource type="PackedScene" uid="uid://c7sy3skbxyx8o" path="res://Scenes/bullet_enemy.tscn" id="2_lssre"]
+[ext_resource type="Texture2D" uid="uid://crhyujjpslntd" path="res://Tiles/tilemap.png" id="3_lssre"]
+[ext_resource type="Texture2D" uid="uid://db7t2y0l8udvo" path="res://top-down/Vector/vector_characters.svg" id="4_wlnc2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lssre"]
-radius = 10.3333
-height = 40.0
+radius = 18.0
+height = 44.0
 
 [sub_resource type="Animation" id="Animation_lssre"]
 length = 0.001
@@ -45,21 +46,28 @@ _data = {
 &"death": SubResource("Animation_0a874")
 }
 
-[node name="Enemy1" type="CharacterBody2D" groups=["Enemy"]]
+[node name="Enemy1" type="CharacterBody2D" unique_id=942741938 groups=["Enemy"]]
 script = ExtResource("1_0a874")
 ENEMYBULLET = ExtResource("2_lssre")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1691809963]
 texture_filter = 1
-texture = ExtResource("2_0a874")
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("3_lssre")
 region_enabled = true
-region_rect = Rect2(425, 44, 33, 44)
+region_rect = Rect2(50.36989, 152.4302, 17.286877, 17.20398)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1845286039]
 shape = SubResource("CapsuleShape2D_lssre")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_wlnc2")
-}
+[node name="Gun" type="Sprite2D" parent="CollisionShape2D" unique_id=1174808557]
+texture_filter = 1
+position = Vector2(4, 8)
+rotation = -0.08726645
+scale = Vector2(1.045, 0.893)
+texture = ExtResource("4_wlnc2")
+region_enabled = true
+region_rect = Rect2(11.0292015, 591.8944, 34.72418, 12.210022)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1042577174]
+libraries/ = SubResource("AnimationLibrary_wlnc2")

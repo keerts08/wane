@@ -5,6 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/nodes/responses_menu/dialogue_responses_menu.gd" id="3_72ixx"]
 [ext_resource type="FontFile" uid="uid://c346isfnaksia" path="res://font/Fonts/Kenney High Square.ttf" id="4_l4n3q"]
+[ext_resource type="Texture2D" uid="uid://bbetj7v1duami" path="res://ui-pack/PNG/Double/Panel/panel-009.png" id="6_a5sfh"]
+[ext_resource type="Texture2D" uid="uid://dqxwrutagoj07" path="res://icons/health.png" id="6_taq3p"]
+[ext_resource type="Texture2D" uid="uid://c4wr4togwcbce" path="res://ui-pack/PNG/Double/Border/panel-border-009.png" id="7_n615u"]
+[ext_resource type="Script" uid="uid://fwayl4nn6m7i" path="res://Dialogues/response_example.gd" id="7_q7cj7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 content_margin_left = 20.0
@@ -121,6 +125,46 @@ _data = {
 &"progress": SubResource("Animation_qkmqt")
 }
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sy3op"]
+texture = ExtResource("6_a5sfh")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+modulate_color = Color(0.12156863, 0.12156863, 0.12156863, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8bi46"]
+texture = ExtResource("7_n615u")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+modulate_color = Color(0.12156863, 0.12156863, 0.12156863, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n615u"]
+texture = ExtResource("6_a5sfh")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+modulate_color = Color(0.12156863, 0.12156863, 0.12156863, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yv4yt"]
+texture = ExtResource("7_n615u")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+modulate_color = Color(0.12156863, 0.12156863, 0.12156863, 1)
+
 [node name="ExampleBalloon" type="CanvasLayer" unique_id=38036521]
 layer = 100
 script = ExtResource("1_36de5")
@@ -212,9 +256,16 @@ auto_focus_first_item = false
 custom_minimum_size = Vector2(160, 180)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_l4n3q")
+theme_override_styles/normal = SubResource("StyleBoxTexture_sy3op")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8bi46")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_n615u")
+theme_override_styles/focus = SubResource("StyleBoxTexture_yv4yt")
 text = "Response example"
+icon = ExtResource("6_taq3p")
 icon_alignment = 1
 vertical_icon_alignment = 0
+expand_icon = true
+script = ExtResource("7_q7cj7")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1162558754]
 unique_name_in_owner = true

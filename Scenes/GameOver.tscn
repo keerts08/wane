@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bvg5nqf8cq800"]
+[gd_scene format=3 uid="uid://bvg5nqf8cq800"]
 
-[ext_resource type="Texture2D" uid="uid://beuywvhwbbarl" path="res://top-down/Sample.png" id="1_rdiyk"]
-[ext_resource type="Texture2D" uid="uid://cdh6xhdg43d1a" path="res://StartMenu.png" id="3_rdiyk"]
-[ext_resource type="FontFile" uid="uid://bp54llop4vyos" path="res://font/Fonts/Kenney Blocks.ttf" id="3_uib17"]
+[ext_resource type="Texture2D" uid="uid://cukfome5lfqdq" path="res://dungeon/Sample.png" id="1_bfgkh"]
+[ext_resource type="FontFile" uid="uid://bo8vq4n1olmk4" path="res://font/Fonts/Kenney High.ttf" id="2_5mu6e"]
+[ext_resource type="Texture2D" uid="uid://doxdl3x0veyim" path="res://ui-pack/PNG/Double/Border/panel-border-000.png" id="5_8710x"]
+[ext_resource type="Texture2D" uid="uid://cv68y1niforle" path="res://ui-pack/PNG/Double/Panel/panel-000.png" id="6_a14ly"]
 
 [sub_resource type="GDScript" id="GDScript_df05h"]
 script/source = "extends Control
@@ -19,15 +20,25 @@ func _on_exit_pressed() -> void:
 	get_tree().quit()
 "
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ktc4i"]
-atlas = ExtResource("3_rdiyk")
-region = Rect2(1426, 463, 586, 194)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tr7xh"]
+texture = ExtResource("5_8710x")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uib17"]
-atlas = ExtResource("3_rdiyk")
-region = Rect2(1426, 713, 587, 193)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w0gmt"]
+texture = ExtResource("6_a14ly")
+texture_margin_left = 25.0
+texture_margin_top = 25.0
+texture_margin_right = 25.0
+texture_margin_bottom = 25.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 
-[node name="GameOver" type="Control"]
+[node name="GameOver" type="Control" unique_id=324439767]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,82 +47,65 @@ grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_df05h")
 
-[node name="BG" type="Sprite2D" parent="."]
-modulate = Color(0.355314, 0.355314, 0.355314, 1)
-position = Vector2(550, 401.75)
-scale = Vector2(2.0156624, 2.0156624)
-texture = ExtResource("1_rdiyk")
+[node name="BG" type="Sprite2D" parent="." unique_id=106406437]
+modulate = Color(0.20942885, 0.20942888, 0.20942879, 1)
+position = Vector2(238, 164.99998)
+scale = Vector2(2.079, 2.526)
+texture = ExtResource("1_bfgkh")
 region_enabled = true
 region_rect = Rect2(0, 0, 918, 415.58)
 
-[node name="Heading" type="Label" parent="."]
+[node name="Heading" type="Label" parent="." unique_id=1828156227]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -469.0
+offset_top = 110.0
+offset_right = 469.0
+offset_bottom = 336.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_5mu6e")
+theme_override_font_sizes/font_size = 170
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=130895779]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -482.5
-offset_top = -255.0
-offset_right = 482.5
-offset_bottom = -75.0
+offset_left = -558.0
+offset_top = 28.0
+offset_right = 1300.0
+offset_bottom = 181.33331
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.774303, 0.119851, 0.369039, 1)
-theme_override_fonts/font = ExtResource("3_uib17")
+scale = Vector2(0.6, 0.6)
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Restart" type="Button" parent="HBoxContainer" unique_id=1499861906]
+custom_minimum_size = Vector2(380, 70)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5mu6e")
 theme_override_font_sizes/font_size = 120
-text = "Game Over"
-horizontal_alignment = 1
+theme_override_styles/normal = SubResource("StyleBoxTexture_tr7xh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_w0gmt")
+text = "RESTART"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -407.0
-offset_top = 415.0
-offset_right = 785.0
-offset_bottom = 609.0
-grow_horizontal = 2
-scale = Vector2(0.7, 0.7)
-theme_override_constants/separation = 20
-metadata/_edit_group_ = true
-
-[node name="Restart" type="TextureButton" parent="HBoxContainer"]
+[node name="Exit" type="Button" parent="HBoxContainer" unique_id=1131547898]
+custom_minimum_size = Vector2(380, 70)
 layout_mode = 2
-texture_normal = SubResource("AtlasTexture_ktc4i")
-texture_hover = SubResource("AtlasTexture_uib17")
-
-[node name="Label" type="Label" parent="HBoxContainer/Restart"]
-layout_mode = 0
-offset_left = -63.0
-offset_top = -20.0
-offset_right = 646.0
-offset_bottom = 196.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_uib17")
-theme_override_font_sizes/font_size = 70
-text = "Restart"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Exit" type="TextureButton" parent="HBoxContainer"]
-layout_mode = 2
-texture_normal = SubResource("AtlasTexture_ktc4i")
-texture_hover = SubResource("AtlasTexture_uib17")
-
-[node name="Label" type="Label" parent="HBoxContainer/Exit"]
-layout_mode = 0
-offset_left = -63.0
-offset_top = -20.0
-offset_right = 646.0
-offset_bottom = 196.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_uib17")
-theme_override_font_sizes/font_size = 70
-text = "Exit"
-horizontal_alignment = 1
-vertical_alignment = 1
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5mu6e")
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxTexture_tr7xh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_w0gmt")
+text = "EXIT"
 
 [connection signal="pressed" from="HBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="HBoxContainer/Exit" to="." method="_on_exit_pressed"]
