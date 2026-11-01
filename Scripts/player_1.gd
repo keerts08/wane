@@ -49,10 +49,7 @@ func _process(_delta: float) -> void:
 		bullet.global_position = global_position
 		bullet.rotation = rotation
 		
-	if gm.level_number < 6:
-		coins.visible = false
-	elif gm.level_number > 5:
-		coins.visible = true
+	coins.visible = true
 		
 	if GlobalManager.player_dead == true:
 		get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")

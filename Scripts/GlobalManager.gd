@@ -30,16 +30,10 @@ func _process(_delta: float) -> void:
 	var enemies = get_tree().get_nodes_in_group("Enemy")
 	var coins = get_tree().get_nodes_in_group("coin")
 	
-	if level_number < 6:
-		if not level_cleared:
-			if enemies.is_empty():
-				level_cleared = true 
-				change_level_after_delay()
-	elif level_number > 5:
-		if not level_cleared:
-			if enemies.is_empty() and coins.is_empty():
-				level_cleared = true  
-				change_level_after_delay()
+	if not level_cleared:
+		if enemies.is_empty() and coins.is_empty():
+			level_cleared = true  
+			change_level_after_delay()
 
 func change_level_after_delay() -> void:
 	change_level = true

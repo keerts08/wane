@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://db7t2y0l8udvo" path="res://top-down/Vector/vector_characters.svg" id="4_wlnc2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lssre"]
-radius = 18.0
-height = 44.0
+radius = 21.0
+height = 48.0
 
 [sub_resource type="Animation" id="Animation_lssre"]
 length = 0.001
@@ -34,10 +34,10 @@ tracks/0/path = NodePath("Sprite2D:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.3767),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0.794399, 3.22476e-06, 9.62615e-07, 1), Color(1, 1, 1, 1)]
+"values": [Color(0.101960786, 0, 0, 1), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wlnc2"]
@@ -51,23 +51,25 @@ script = ExtResource("1_0a874")
 ENEMYBULLET = ExtResource("2_lssre")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1691809963]
+self_modulate = Color(0.76583844, 0.29160234, 0, 1)
 texture_filter = 1
-scale = Vector2(2.6, 2.6)
+scale = Vector2(3.005, 3.005)
 texture = ExtResource("3_lssre")
 region_enabled = true
 region_rect = Rect2(50.36989, 152.4302, 17.286877, 17.20398)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1845286039]
-shape = SubResource("CapsuleShape2D_lssre")
-
-[node name="Gun" type="Sprite2D" parent="CollisionShape2D" unique_id=1174808557]
+[node name="Gun" type="Sprite2D" parent="Sprite2D" unique_id=1174808557]
+modulate = Color(0.983589, 0.48452216, 0.42408237, 1)
 texture_filter = 1
-position = Vector2(4, 8)
-rotation = -0.08726645
-scale = Vector2(1.045, 0.893)
+position = Vector2(1.5384617, 3.0769234)
+rotation = -0.08726644
+scale = Vector2(0.40192315, 0.34346157)
 texture = ExtResource("4_wlnc2")
 region_enabled = true
 region_rect = Rect2(11.0292015, 591.8944, 34.72418, 12.210022)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1845286039]
+shape = SubResource("CapsuleShape2D_lssre")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1042577174]
 libraries/ = SubResource("AnimationLibrary_wlnc2")

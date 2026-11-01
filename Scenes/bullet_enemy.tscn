@@ -4,14 +4,15 @@
 [ext_resource type="Script" uid="uid://cc8rg25kjdsi7" path="res://Scripts/bullet_enemy.gd" id="2_cg55a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mqx58"]
-radius = 5.0
+radius = 7.499999
+height = 39.999996
 
 [node name="Area2D" type="Area2D" unique_id=1171947169]
 script = ExtResource("2_cg55a")
 
 [node name="BulletEnemy" type="Sprite2D" parent="." unique_id=1950480204]
-modulate = Color(1, 0.21485, 0.274677, 1)
-scale = Vector2(0.4, 0.4)
+modulate = Color(7.1080613, 7.1080613, 7.1080613, 1)
+scale = Vector2(0.535, 0.535)
 texture = ExtResource("1_mqx58")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2087514557]
