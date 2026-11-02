@@ -5,9 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://crhyujjpslntd" path="res://Tiles/tilemap.png" id="3_lssre"]
 [ext_resource type="Texture2D" uid="uid://db7t2y0l8udvo" path="res://top-down/Vector/vector_characters.svg" id="4_wlnc2"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lssre"]
-radius = 21.0
-height = 48.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_wlnc2"]
+radius = 23.0
 
 [sub_resource type="Animation" id="Animation_lssre"]
 length = 0.001
@@ -69,7 +68,11 @@ region_enabled = true
 region_rect = Rect2(11.0292015, 591.8944, 34.72418, 12.210022)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1845286039]
-shape = SubResource("CapsuleShape2D_lssre")
+shape = SubResource("CircleShape2D_wlnc2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1042577174]
 libraries/ = SubResource("AnimationLibrary_wlnc2")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=934309652]
+path_desired_distance = 10.0
+target_desired_distance = 20.0

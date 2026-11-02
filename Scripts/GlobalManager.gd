@@ -29,7 +29,7 @@ func _ready() -> void:
 		DialogueManager.dialogue_ended.connect(_on_intro_ended, CONNECT_ONE_SHOT)
 		DialogueManager.show_dialogue_balloon(intro_dialogue, "start")
 	else:
-		_start_game()
+		GlobalManager.game_started = true
 
 func _on_intro_ended(_resource: DialogueResource) -> void:
 	get_tree().paused = false

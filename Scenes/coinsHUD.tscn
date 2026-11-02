@@ -9,9 +9,6 @@ corner_radius_top_left = 70
 corner_radius_top_right = 70
 corner_radius_bottom_right = 70
 corner_radius_bottom_left = 70
-shadow_color = Color(0, 0, 0, 0.733333)
-shadow_size = 5
-shadow_offset = Vector2(10, 10)
 
 [node name="Coins" type="Control" unique_id=1266498320]
 layout_mode = 3
@@ -20,22 +17,22 @@ scale = Vector2(0.5, 0.5)
 
 [node name="Panel" type="Panel" parent="." unique_id=1862294169]
 layout_mode = 0
-offset_left = 1730.0
+offset_left = 1880.0
 offset_top = 76.0
 offset_right = 2244.0
-offset_bottom = 194.0
+offset_bottom = 184.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_0axo5")
 
 [node name="Coin" type="Sprite2D" parent="." unique_id=1977085220]
-position = Vector2(1816, 134)
+position = Vector2(1954, 134)
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("1_nqnh8")
 
 [node name="Label" type="Label" parent="." unique_id=649405661]
 layout_mode = 0
-offset_left = 1908.0
+offset_left = 2046.0
 offset_top = 88.0
-offset_right = 2082.0
+offset_right = 2220.0
 offset_bottom = 178.0
 theme_override_fonts/font = ExtResource("2_r68ek")
 theme_override_font_sizes/font_size = 100

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c7mlgwepagcrh"]
 
-[ext_resource type="Texture2D" uid="uid://dospb8kv67msd" path="res://heart.png" id="1_0axo5"]
+[ext_resource type="Texture2D" uid="uid://dospb8kv67msd" path="res://icons/heart.png" id="1_0axo5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4i51"]
 bg_color = Color(0.17254902, 0.15294118, 0.13725491, 1)
