@@ -18,7 +18,7 @@ signal player_death()
 func _ready() -> void:
 	playerhealth = GlobalManager.player_health
 	GlobalManager.coins_collected = 0
-	update_coins_display()
+	update_coins_display.call_deferred()
 	
 	GlobalManager.player_dead = false
 	playerhealth = GlobalManager.player_health
@@ -42,7 +42,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	update_coins_display()
-	if Input.is_action_just_pressed("shoot") and BULLET:
+	if Input.is_action_just_pressed("shoot") and BULLET and GlobalManager.game_started:
 		$Shoot.play()
 		var bullet = BULLET.instantiate()
 		get_tree().root.add_child(bullet)

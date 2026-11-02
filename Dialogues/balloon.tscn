@@ -166,6 +166,7 @@ axis_stretch_vertical = 2
 modulate_color = Color(0.12156863, 0.12156863, 0.12156863, 1)
 
 [node name="ExampleBalloon" type="CanvasLayer" unique_id=38036521]
+process_mode = 3
 layer = 100
 script = ExtResource("1_36de5")
 

@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://dxymcamer5t4f" path="res://Scenes/Level 7.tscn" id="2_c87xo"]
 [ext_resource type="Resource" uid="uid://ch06i3syv8vo3" path="res://Dialogues/Lev6.dialogue" id="3_cr7x6"]
 [ext_resource type="TileSet" uid="uid://ctmba5p4p7k21" path="res://Tiles/DungeonTiles.tres" id="4_cr7x6"]
-[ext_resource type="FontFile" uid="uid://baeyuf84rqka4" path="res://font/Fonts/Kenney Future Narrow.ttf" id="5_cr7x6"]
 [ext_resource type="PackedScene" uid="uid://bce2w2ed0s7hq" path="res://Scenes/Player1.tscn" id="5_jcig1"]
 [ext_resource type="PackedScene" uid="uid://m0d2lbdxa8l2" path="res://Scenes/coin.tscn" id="5_lvg7y"]
 [ext_resource type="PackedScene" uid="uid://6e1u5wcqnjij" path="res://Scenes/enemy_1.tscn" id="6_6fng5"]
@@ -28,19 +27,6 @@ tile_set = ExtResource("4_cr7x6")
 [node name="Player" parent="." unique_id=276095073 instance=ExtResource("5_jcig1")]
 position = Vector2(557, 363)
 motion_mode = 1
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1032872087]
-
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=1614194517]
-offset_left = 26.0
-offset_top = 124.0
-offset_right = 283.0
-offset_bottom = 184.0
-theme_override_colors/font_color = Color(0.2, 1, 0.69803923, 1)
-theme_override_fonts/font = ExtResource("5_cr7x6")
-text = "Destroy enemies and 
-collect all coins to pass
- the level."
 
 [node name="Enemy1" parent="." unique_id=1217027970 node_paths=PackedStringArray("player") instance=ExtResource("6_6fng5")]
 position = Vector2(944, 355)

@@ -15,6 +15,8 @@ var shoot_cooldown := 1.0
 var shoot_timer := 0.0
 
 func _process(delta: float) -> void:
+	if GlobalManager.game_started == false:
+		return
 	if Input.is_action_just_pressed("down") or Input.is_action_just_pressed("up") or Input.is_action_just_pressed("right") or Input.is_action_just_pressed("left") or Input.is_action_just_pressed("shoot"):
 		player_chase = true
 	if player_chase:
