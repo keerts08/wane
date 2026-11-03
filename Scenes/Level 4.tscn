@@ -63,3 +63,8 @@ position = Vector2(-2, 682)
 
 [node name="Coin3" parent="Coins" unique_id=866269360 instance=ExtResource("7_gi3jd")]
 position = Vector2(180, 308)
+
+[connection signal="lose_health" from="." to="Player" method="_on_level_lose_health"]
+[connection signal="lose_knowledge" from="." to="Player" method="_on_level_lose_knowledge"]
+[connection signal="lose_speed" from="." to="Player" method="_on_level_lose_speed"]
+[connection signal="player_won" from="." to="Player" method="_on_level_player_won"]

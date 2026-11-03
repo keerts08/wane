@@ -55,5 +55,5 @@ position = Vector2(692, 120)
 
 [connection signal="lose_health" from="." to="Player" method="_on_level_lose_health"]
 [connection signal="lose_knowledge" from="." to="Player" method="_on_level_lose_knowledge"]
-[connection signal="lose_speed" from="." to="Player" method="_on_level_1_lose_speed"]
+[connection signal="lose_speed" from="." to="Player" method="_on_level_lose_speed"]
 [connection signal="player_won" from="." to="Player" method="_on_level_player_won"]
