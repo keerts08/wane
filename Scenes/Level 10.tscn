@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://b7746qv0l3a6a"]
+[gd_scene format=4 uid="uid://dqu4bvlixwmb0"]
 
 [ext_resource type="Script" uid="uid://c75lm1d2elp6d" path="res://Scripts/GlobalManager.gd" id="1_jjxrr"]
 [ext_resource type="PackedScene" uid="uid://emlbi7yabj70" path="res://Scenes/YouWin.tscn" id="2_mra8d"]
