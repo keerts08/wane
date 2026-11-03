@@ -48,6 +48,10 @@ player = NodePath("../Player")
 position = Vector2(1072, 509)
 player = NodePath("../Player")
 
+[node name="Enemy3" parent="." unique_id=1292347073 node_paths=PackedStringArray("player") instance=ExtResource("3_bfc4r")]
+position = Vector2(1392, 822)
+player = NodePath("../Player")
+
 [node name="Coins" type="Node2D" parent="." unique_id=1451798268]
 position = Vector2(1262, 147)
 
