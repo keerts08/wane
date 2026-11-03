@@ -37,7 +37,7 @@ tile_map_data = PackedByteArray("AAAaAAEAAAAJAAYAAAAaAAIAAAAJAAYAAAAaAAMAAAAJAAY
 tile_set = ExtResource("4_cnj1k")
 
 [node name="Player" parent="." unique_id=981283744 instance=ExtResource("5_gxv21")]
-position = Vector2(360, 724)
+position = Vector2(204, 477)
 motion_mode = 1
 
 [node name="Enemy1" parent="." unique_id=1916999469 node_paths=PackedStringArray("player") instance=ExtResource("6_oyoox")]
@@ -53,7 +53,7 @@ position = Vector2(1487, 136)
 player = NodePath("../Player")
 
 [node name="Enemy4" parent="." unique_id=335015003 node_paths=PackedStringArray("player") instance=ExtResource("6_oyoox")]
-position = Vector2(259, 457)
+position = Vector2(319, 710)
 player = NodePath("../Player")
 
 [node name="Enemy5" parent="." unique_id=2069605024 node_paths=PackedStringArray("player") instance=ExtResource("6_oyoox")]
